@@ -9,7 +9,7 @@ import EditIcon from "@material-ui/icons/Edit";
 import React, { useState } from "react";
 import db from "./firebaseConfig";
 
-const ToDoList = ({ list, index, handleEdit }) => {
+const ToDoList = ({ list, handleEdit }) => {
   const [checked, setChecked] = useState(false);
 
   const handleDelete = (id) => {
@@ -19,7 +19,7 @@ const ToDoList = ({ list, index, handleEdit }) => {
   };
 
   return (
-    <ListItem key={index} button onClick={() => setChecked(!checked)}>
+    <ListItem button onClick={() => setChecked(!checked)}>
       <ListItemIcon>
         <Checkbox edge="start" checked={checked === true} disableRipple />
       </ListItemIcon>

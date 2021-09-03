@@ -10,8 +10,6 @@ function App() {
   const [input, setInput] = useState("");
   const [editId, setEdit] = useState("");
 
-  console.log(input);
-
   useEffect(() => {
     db.collection("todos")
       .orderBy("timestamp", "desc")
@@ -105,7 +103,7 @@ function App() {
 
       <ul>
         {todos.map((list, index) => (
-          <ToDoList list={list} handleEdit={handleEdit} index={index} />
+          <ToDoList key={index} list={list} handleEdit={handleEdit} />
         ))}
       </ul>
     </div>
